@@ -10,7 +10,7 @@ const getTyped = (value: string) => {
   const isNaN = Number.isNaN(numb);
 
   return isNaN ? value : numb;
-}
+};
 
 export const env: EnvTypes = makeTypes();
 
