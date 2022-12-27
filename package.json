@@ -1,6 +1,6 @@
 {
   "name": "@andr-ll/tenv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "andr_ll",
   "license": "ISC",
   "description": "An utility for creation types of `process.env` variables and `.env` file",
