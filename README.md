@@ -1,5 +1,8 @@
 # @andr-ll/tenv
 
+[![Node.js Package Release](https://github.com/andr-ll/tenv/actions/workflows/release.yml/badge.svg)](https://github.com/andr-ll/tenv/actions/workflows/release.yml)
+[![Pull Request CI](https://github.com/andr-ll/tenv/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/andr-ll/tenv/actions/workflows/continuous_integration.yml)
+
 An utility for creation types for `process.env` variables and `.env` file.
 
 ## Installation
