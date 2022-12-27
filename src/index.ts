@@ -13,7 +13,10 @@ export function makeTypes(): EnvTypes {
     .split(newLineBreak);
 
   const envEntries: Array<[string, string | undefined]> = [
-    ...Object.entries(process.env),
+    ...Object.keys(process.env).map((key): [string, string | undefined] => [
+      key,
+      process.env[key],
+    ]),
   ];
 
   for (const line of envFile) {

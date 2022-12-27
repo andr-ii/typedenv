@@ -1,9 +1,9 @@
 {
   "name": "@andr-ll/tenv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "andr_ll",
   "license": "ISC",
-  "description": "An utility for creation types of `process.env` variables and `.env` file",
+  "description": "An utility for creation types for `process.env` variables and `.env` file",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "bin": {
