@@ -41,3 +41,7 @@ It will include all types for `process.env` and `.env` file.
 ```ts
 import { env } from '@andr-ll/tenv';
 ```
+
+Then all `process.env` and `.env` variables will be available with types:
+
+<img src="https://github.com/andr-ll/tenv/blob/master/assets/tenv.png?raw=true"/>
