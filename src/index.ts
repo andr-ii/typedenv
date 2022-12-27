@@ -1,6 +1,17 @@
 import * as fs from 'fs';
 import { EnvTypes } from './type';
 
+const getTyped = (value: string) => {
+  if (value === 'true' || value === 'false') {
+    return value === 'true';
+  }
+
+  const numb = Number(value);
+  const isNaN = Number.isNaN(numb);
+
+  return isNaN ? value : numb;
+};
+
 export const env: EnvTypes = makeTypes();
 
 export function makeTypes(): EnvTypes {
@@ -43,11 +54,11 @@ export function makeTypes(): EnvTypes {
       continue;
     }
 
-    const isNaN = Number.isNaN(Number(value));
+    const typedValue = getTyped(value);
 
-    stream.write(`  ${key}: ${isNaN ? 'string' : 'number'};\n`);
+    stream.write(`  ${key}: ${typeof typedValue};\n`);
 
-    env[key] = value;
+    env[key] = typedValue;
   }
 
   stream.write('}\n');
