@@ -41,3 +41,18 @@ It will include all types for `process.env` and `.env` file.
 Then all `process.env` and `.env` variables will be available with types:
 
 <img src="https://github.com/andr-ll/tenv/blob/master/assets/tenv.png?raw=true"/>
+
+### '.env' example
+
+```env
+# This value will have a 'number' type.
+VERSION=2
+
+# This value will have a 'string' type.
+PROJECT='foo-bar'
+
+COMMENT=some-comment # This value will have a 'string' type and this comment will be removed.
+
+# This value will have a 'boolean' type.
+IS_JSON=true
+```
