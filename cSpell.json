@@ -1,0 +1,23 @@
+{
+  "dictionaries": [],
+  "flagWords": [],
+  "ignorePaths": [
+    ".eslintrc",
+    ".eslintignore",
+    ".gitignore",
+    ".prettierignore",
+    "*.config.js",
+    "*.json",
+    "*.log",
+    "*.yaml",
+    ".vscode",
+    "coverage/",
+    "lib/",
+    "node_modules/",
+    "scripts/",
+    "env.d.ts"
+  ],
+  "language": "en-US",
+  "version": "0.2",
+  "words": ["andr", "tenv"]
+}
