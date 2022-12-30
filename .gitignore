@@ -3,6 +3,7 @@
 /bin
 /lib
 /env.d.ts
+/.env
 
 # Logs
 *.log
