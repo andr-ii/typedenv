@@ -19,9 +19,9 @@ export function makeTypes(): EnvTypes {
 
   const stream = fs.createWriteStream('./env.d.ts');
   const newLineBreak = process.platform === 'win32' ? '\r\n' : '\n';
-  const envFile = fs
-    .readFileSync('./.env', { encoding: 'utf-8' })
-    .split(newLineBreak);
+  const envFile = fs.existsSync('./.env')
+    ? fs.readFileSync('./.env', { encoding: 'utf-8' }).split(newLineBreak)
+    : [];
 
   const envEntries: Array<[string, string | undefined]> = [
     ...Object.entries(process.env),
