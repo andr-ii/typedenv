@@ -63,7 +63,7 @@ function makeTypes(): EnvTypes {
     }
   }
 
-  stream.write('export interface EnvTypes {\n');
+  stream.write(`export interface EnvTypes {${newLineBreak}`);
 
   for (const [key, value] of envEntries) {
     if (value == null || value === '') {
@@ -72,12 +72,12 @@ function makeTypes(): EnvTypes {
 
     const typedValue = getTyped(value);
 
-    stream.write(`  ${key}: ${typeof typedValue};\n`);
+    stream.write(`  ${key}: ${typeof typedValue};${newLineBreak}`);
 
     env[key] = typedValue;
   }
 
-  stream.write('}\n');
+  stream.write(`}${newLineBreak}`);
 
   return env;
 }
