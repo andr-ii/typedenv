@@ -15,7 +15,7 @@ npm i typedenv
 
 At the very first time you will have to create a `env.d.ts` file.
 
-Add following line to `scripts` at your project `package.json`:
+Add following script to the `scripts` of your project's `package.json` file:
 
 ```json
 "typedenv": "typedenv init"
@@ -27,7 +27,7 @@ Then simply run:
 npm run typedenv
 ```
 
-The `env.d.ts` file should appear at your package root directory.
+The `env.d.ts` file should appear at your project's root directory.
 
 It will include all types for `process.env` and `.env` file.
 
