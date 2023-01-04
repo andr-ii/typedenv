@@ -1,7 +1,17 @@
 import * as fs from 'fs';
 import { EnvTypes } from './type';
 
-const getTyped = (value: string) => {
+export const env: EnvTypes = makeTypes();
+
+export function init() {
+  if (process.argv[2] !== 'init') {
+    throw new Error('Unsupported argument.');
+  }
+
+  makeTypes();
+}
+
+function getTyped(value: string) {
   if (value === 'true' || value === 'false') {
     return value === 'true';
   }
@@ -10,11 +20,9 @@ const getTyped = (value: string) => {
   const isNaN = Number.isNaN(numb);
 
   return isNaN ? value : numb;
-};
+}
 
-export const env: EnvTypes = makeTypes();
-
-export function makeTypes(): EnvTypes {
+function makeTypes(): EnvTypes {
   const env: EnvTypes = {};
 
   const stream = fs.createWriteStream('./env.d.ts');
