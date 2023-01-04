@@ -1,3 +1,10 @@
-// Will be tracking generated `env.d.ts` file.
+/**
+ * @description Exported type of this file is the interface which
+ * is generated to the `env.d.ts` file in the root of the project.
+ * @author Andrii Lytovchenko <andr.lyt.dev@gmail.com>
+ * @license MIT
+ */
+
+// Will be tracking generated `env.d.ts` file from package root directory.
 // @ts-ignore
-export type { EnvTypes } from '../../../../env';
+export type { EnvTypes } from '../../../env';
