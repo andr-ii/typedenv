@@ -1,22 +1,14 @@
-# @andr-ll/tenv
+# typedenv
 
-[![Node.js Package Release](https://github.com/andr-ll/tenv/actions/workflows/release.yml/badge.svg)](https://github.com/andr-ll/tenv/actions/workflows/release.yml)
-[![Pull Request CI](https://github.com/andr-ll/tenv/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/andr-ll/tenv/actions/workflows/continuous_integration.yml)
+[![NPM version][npm-img]][npm-url]
+[![Package Build][build-img]][build-url]
 
 An utility for creation types for `process.env` variables and `.env` file.
 
 ## Installation
 
-Make sure you have added registry configuration to `~/.npmrc` file before installation.
-
 ```bash
-echo '@andr-ll:registry=https://npm.pkg.github.com' >> ~/.npmrc
-```
-
-Then install the package:
-
-```bash
-npm i @andr-ll/tenv
+npm i typedenv
 ```
 
 ## Initial types generation
@@ -26,13 +18,13 @@ At the very first time you will have to create a `env.d.ts` file.
 Add following line to `scripts` at your project `package.json`:
 
 ```json
-"tenv": "tenv"
+"typedenv": "typedenv init"
 ```
 
 Then simply run:
 
 ```bash
-npm run tenv
+npm run typedenv
 ```
 
 The `env.d.ts` file should appear at your package root directory.
@@ -43,7 +35,7 @@ It will include all types for `process.env` and `.env` file.
 
 Then all `process.env` and `.env` variables will be available with types:
 
-<img src="https://github.com/andr-ll/tenv/blob/master/assets/tenv.png?raw=true"/>
+<img src="https://github.com/andr-ii/typedenv/blob/master/assets/tenv.png?raw=true"/>
 
 ### '.env' example
 
@@ -59,3 +51,8 @@ COMMENT=some-comment # This value will have a 'string' type and this comment wil
 # This value will have a 'boolean' type.
 IS_JSON=true
 ```
+
+[npm-img]: https://img.shields.io/npm/v/typedenv.svg
+[npm-url]: https://www.npmjs.com/package/typedenv
+[build-img]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml
