@@ -1,3 +1,11 @@
+/**
+ * @description The main file of the `typedenv` package.
+ * Exports function for initial creation of `env.d.ts` file
+ * and typed `env` variable.
+ * @author Andrii Lytovchenko <andr.lyt.dev@gmail.com>
+ * @license MIT
+ */
+
 import * as fs from 'fs';
 import { EnvTypes } from './type';
 
