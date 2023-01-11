@@ -31,15 +31,15 @@
     "start": "ts-node ./src",
     "build": "run-s build:lib build:bin",
     "build:lib": "tsc",
-    "build:bin": "npsh.bin 'init()'",
+    "build:bin": "npsh bin 'init()'",
     "types": "tsc --noEmit",
     "format": "prettier --write '**/*.{js,json,md,ts,yml,yaml}'",
     "format:check": "prettier -l '**/*.{js,json,md,ts,yml,yaml}'",
     "lint": "eslint --fix '**/*.ts'",
     "lint:check": "eslint '**/*.ts'",
     "spell": "cspell '**/*'",
-    "hooks": "npsh.hooks",
-    "svc": "npsh.svc andr-ii typedenv master"
+    "hooks": "npsh hooks",
+    "svc": "npsh svc andr-ii typedenv master"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
@@ -51,10 +51,8 @@
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.2",
     "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
-  },
-  "dependencies": {
-    "npsh": "^1.0.7",
+    "typescript": "^4.6.3",
+    "npsh": "^2.0.0",
     "npm-run-all": "^4.1.5"
   }
 }
