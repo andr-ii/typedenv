@@ -35,7 +35,7 @@ It will include all types for `process.env` and `.env` file.
 
 Then all `process.env` and `.env` variables will be available with types:
 
-<img src="https://github.com/andr-ii/typedenv/blob/master/assets/tenv.png?raw=true"/>
+<img src="https://github.com/andr-ii/typedenv/blob/master/assets/typedenv.png?raw=true"/>
 
 ### '.env' example
 

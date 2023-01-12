@@ -7,7 +7,7 @@
  */
 
 import * as fs from 'fs';
-import { EnvTypes } from './type';
+import { EnvTypes } from './types';
 
 export const env: EnvTypes = makeTypes();
 
@@ -34,9 +34,10 @@ function makeTypes(): EnvTypes {
   const env: EnvTypes = {};
 
   const stream = fs.createWriteStream('./env.d.ts');
-  const newLineBreak = process.platform === 'win32' ? '\r\n' : '\n';
+  const newLine = process.platform === 'win32' ? '\r\n' : '\n';
+
   const envFile = fs.existsSync('./.env')
-    ? fs.readFileSync('./.env', { encoding: 'utf-8' }).split(newLineBreak)
+    ? fs.readFileSync('./.env', { encoding: 'utf-8' }).split(newLine)
     : [];
 
   const envEntries: Array<[string, string | undefined]> = [
@@ -63,7 +64,7 @@ function makeTypes(): EnvTypes {
     }
   }
 
-  stream.write(`export interface EnvTypes {${newLineBreak}`);
+  stream.write(`export interface EnvTypes {${newLine}`);
 
   for (const [key, value] of envEntries) {
     if (value == null || value === '') {
@@ -72,12 +73,12 @@ function makeTypes(): EnvTypes {
 
     const typedValue = getTyped(value);
 
-    stream.write(`  ${key}: ${typeof typedValue};${newLineBreak}`);
+    stream.write(`  ${key}: ${typeof typedValue};${newLine}`);
 
     env[key] = typedValue;
   }
 
-  stream.write(`}${newLineBreak}`);
+  stream.write(`}${newLine}`);
 
   return env;
 }
