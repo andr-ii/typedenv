@@ -1,4 +1,4 @@
-name: publish typedenv package to npmjs
+name: publish tyenv package to npmjs
 
 on:
   release:

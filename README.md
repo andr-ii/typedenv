@@ -1,4 +1,4 @@
-# typedenv
+# tyenv
 
 [![NPM version][npm-img]][npm-url]
 [![Package Build][build-img]][build-url]
@@ -9,13 +9,13 @@ An utility for creation types for `process.env` variables and `.env` file.
 ## Installation
 
 ```bash
-npm i typedenv
+npm i tyenv
 ```
 
 ## Initial types generation
 
 At the very first time you will have to create a `env.d.ts` file.
-It will be located at `node_modules/typedenv/lib` directory
+It will be located at `node_modules/tyenv/lib` directory
 and will include all types for `process.env` and `.env` file.
 
 > **Note**
@@ -26,13 +26,13 @@ and will include all types for `process.env` and `.env` file.
 Add following script to the `scripts` of your project's `package.json` file:
 
 ```json
-"typedenv": "typedenv init"
+"tyenv": "tyenv init"
 ```
 
 Then run:
 
 ```bash
-npm run typedenv
+npm run tyenv
 ```
 
 ### Usage
@@ -41,15 +41,15 @@ Add import:
 
 ```ts
 // ES6 or TypeScript
-import env from 'typedenv';
+import env from 'tyenv';
 
 // CommonJS
-const { env } = require('typedenv');
+const { env } = require('tyenv');
 ```
 
 All of the `process.env` and the `.env` file variables will be available with types:
 
-<img src="https://github.com/andr-ii/typedenv/blob/master/assets/typedenv.png?raw=true"/>
+<img src="https://github.com/andr-ii/tyenv/blob/master/assets/tyenv.png?raw=true"/>
 
 ### '.env' example
 
@@ -66,9 +66,9 @@ COMMENT=some-comment # This value will have a 'string' type and this comment wil
 IS_JSON=true
 ```
 
-[npm-img]: https://img.shields.io/npm/v/typedenv.svg
-[npm-url]: https://www.npmjs.com/package/typedenv
-[build-img]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml/badge.svg
-[build-url]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml
-[coverage-img]: https://coveralls.io/repos/github/andr-ii/typedenv/badge.svg?branch=master
-[coverage-url]: https://coveralls.io/github/andr-ii/typedenv?branch=master
+[npm-img]: https://img.shields.io/npm/v/tyenv.svg
+[npm-url]: https://www.npmjs.com/package/tyenv
+[build-img]: https://github.com/andr-ii/tyenv/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/andr-ii/tyenv/actions/workflows/build.yml
+[coverage-img]: https://coveralls.io/repos/github/andr-ii/tyenv/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/andr-ii/tyenv?branch=master

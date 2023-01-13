@@ -1,5 +1,5 @@
 /**
- * @description The main file of the `typedenv` package.
+ * @description The main file of the `tyenv` package.
  * Exports function for initial creation of `env.d.ts` file
  * and typed `env` variable.
  * @author Andrii Lytovchenko <andr.lyt.dev@gmail.com>
