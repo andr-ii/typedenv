@@ -15,10 +15,11 @@ npm i typedenv
 ## Initial types generation
 
 At the very first time you will have to create a `env.d.ts` file.
-It will be located at `your-project/node_modules/typedenv/lib` directory
+It will be located at `node_modules/typedenv/lib` directory
 and will include all types for `process.env` and `.env` file.
 
 > **Note**
+>
 > If `.env` file was updated - this script should be re-run manually
 > to get all new variables with types for your development process.
 

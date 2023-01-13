@@ -1,6 +1,6 @@
 {
   "name": "typedenv",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Andrii Lytovchenko <andr.lyt.dev@gmail.com>",
   "license": "MIT",
   "description": "An utility for creation types for `process.env` variables and `.env` file",
