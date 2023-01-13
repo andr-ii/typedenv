@@ -29,7 +29,7 @@ afterAll(async () => {
   fs.rmSync(ENV_TYPES_PATH);
 });
 
-describe('typedenv module test', () => {
+describe('tyenv module test', () => {
   it('creates "env.d.ts" file in the "lib" directory', async () => {
     expect.assertions(1);
 

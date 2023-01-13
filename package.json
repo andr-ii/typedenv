@@ -1,13 +1,13 @@
 {
-  "name": "typedenv",
-  "version": "1.2.1",
+  "name": "tyenv",
+  "version": "1.2.2",
   "author": "Andrii Lytovchenko <andr.lyt.dev@gmail.com>",
   "license": "MIT",
   "description": "An utility for creation types for `process.env` variables and `.env` file",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "bin": {
-    "typedenv": "./bin/index.js"
+    "tyenv": "./bin/index.js"
   },
   "files": [
     "lib",
@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:andr-ii/typedenv.git"
+    "url": "git@github.com:andr-ii/tyenv.git"
   },
   "scripts": {
     "start": "ts-node ./src",
@@ -42,7 +42,7 @@
     "lint:check": "eslint '**/*.ts'",
     "spell": "cspell '**/*'",
     "hooks": "npsh hooks",
-    "svc": "npsh svc andr-ii typedenv master",
+    "svc": "npsh svc andr-ii tyenv master",
     "test": "jest"
   },
   "devDependencies": {
