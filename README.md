@@ -1,57 +1,62 @@
-# @andr-ll/tenv
+# typedenv
 
-[![Node.js Package Release](https://github.com/andr-ll/tenv/actions/workflows/release.yml/badge.svg)](https://github.com/andr-ll/tenv/actions/workflows/release.yml)
-[![Pull Request CI](https://github.com/andr-ll/tenv/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/andr-ll/tenv/actions/workflows/continuous_integration.yml)
+[![NPM version][npm-img]][npm-url]
+[![Package Build][build-img]][build-url]
+[![Coverage Status][coverage-img]][coverage-url]
 
 An utility for creation types for `process.env` variables and `.env` file.
 
 ## Installation
 
-Make sure you have added registry configuration to `~/.npmrc` file before installation.
-
 ```bash
-echo '@andr-ll:registry=https://npm.pkg.github.com' >> ~/.npmrc
-```
-
-Then install the package:
-
-```bash
-npm i @andr-ll/tenv
+npm i typedenv
 ```
 
 ## Initial types generation
 
 At the very first time you will have to create a `env.d.ts` file.
+It will be located at `your-project/node_modules/typedenv/lib` directory
+and will include all types for `process.env` and `.env` file.
 
-Add following line to `scripts` at your project `package.json`:
+> **Note**
+> If `.env` file was updated - this script should be re-run manually
+> to get all new variables with types for your development process.
+
+Add following script to the `scripts` of your project's `package.json` file:
 
 ```json
-"tenv": "tenv"
+"typedenv": "typedenv init"
 ```
 
-Then simply run:
+Then run:
 
 ```bash
-npm run tenv
+npm run typedenv
 ```
-
-The `env.d.ts` file should appear at your package root directory.
-
-It will include all types for `process.env` and `.env` file.
 
 ### Usage
 
-Then all `process.env` and `.env` variables will be available with types:
+Add import:
 
-<img src="https://github.com/andr-ll/tenv/blob/master/assets/tenv.png?raw=true"/>
+```ts
+// ES6 or TypeScript
+import env from 'typedenv';
+
+// CommonJS
+const { env } = require('typedenv');
+```
+
+All of the `process.env` and the `.env` file variables will be available with types:
+
+<img src="https://github.com/andr-ii/typedenv/blob/master/assets/typedenv.png?raw=true"/>
 
 ### '.env' example
 
 ```env
 # This value will have a 'number' type.
-VERSION=2
+PORT=3000
 
-# This value will have a 'string' type.
+# This value will have a 'string' type. Quotes ' or " will be removed.
 PROJECT='foo-bar'
 
 COMMENT=some-comment # This value will have a 'string' type and this comment will be removed.
@@ -59,3 +64,10 @@ COMMENT=some-comment # This value will have a 'string' type and this comment wil
 # This value will have a 'boolean' type.
 IS_JSON=true
 ```
+
+[npm-img]: https://img.shields.io/npm/v/typedenv.svg
+[npm-url]: https://www.npmjs.com/package/typedenv
+[build-img]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml/badge.svg
+[build-url]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml
+[coverage-img]: https://coveralls.io/repos/github/andr-ii/typedenv/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/andr-ii/typedenv?branch=master

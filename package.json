@@ -1,13 +1,13 @@
 {
-  "name": "@andr-ll/tenv",
-  "version": "1.1.7",
-  "author": "andr_ll",
-  "license": "ISC",
+  "name": "typedenv",
+  "version": "1.2.0",
+  "author": "Andrii Lytovchenko <andr.lyt.dev@gmail.com>",
+  "license": "MIT",
   "description": "An utility for creation types for `process.env` variables and `.env` file",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "bin": {
-    "tenv": "./bin/index.js"
+    "typedenv": "./bin/index.js"
   },
   "files": [
     "lib",
@@ -20,27 +20,33 @@
   "keywords": [
     "nodejs",
     "typescript",
-    "javascript"
+    "javascript",
+    "environment variables"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:andr-ll/tenv.git"
+    "url": "git@github.com:andr-ii/typedenv.git"
   },
   "scripts": {
     "start": "ts-node ./src",
-    "build": "run-s build:lib build:bin",
+    "build": "run-s clean build:lib build:bin",
     "build:lib": "tsc",
-    "build:bin": "nph.bin 'makeTypes()'",
+    "build:bin": "npsh bin 'init()'",
+    "clean": "run-s clean:lib clean:bin",
+    "clean:lib": "rm -rf ./lib",
+    "clean:bin": "rm -rf ./bin",
     "types": "tsc --noEmit",
     "format": "prettier --write '**/*.{js,json,md,ts,yml,yaml}'",
-    "format:check": "prettier --check '**/*.{js,json,md,ts,yml,yaml}'",
+    "format:check": "prettier -l '**/*.{js,json,md,ts,yml,yaml}'",
     "lint": "eslint --fix '**/*.ts'",
     "lint:check": "eslint '**/*.ts'",
     "spell": "cspell '**/*'",
-    "hooks": "nph.hooks",
-    "svc": "nph.svc andr-ll tenv master"
+    "hooks": "npsh hooks",
+    "svc": "npsh svc andr-ii typedenv master",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^29.2.5",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
@@ -48,15 +54,13 @@
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^29.3.1",
+    "npm-run-all": "^4.1.5",
+    "npsh": "^2.0.0",
+    "nuti": "^1.5.0",
     "prettier": "^2.6.2",
+    "ts-jest": "^29.0.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
-  },
-  "publishConfig": {
-    "@andr-ll:registry": "https://npm.pkg.github.com"
-  },
-  "dependencies": {
-    "@andr-ll/nph": "^1.0.3",
-    "npm-run-all": "^4.1.5"
   }
 }
