@@ -1,7 +1,7 @@
 import { init } from '../src';
 
 describe('error handling', () => {
-  it('throws an error ', async () => {
+  it('throws an error if "init" argument is missing', async () => {
     expect.assertions(1);
 
     try {
