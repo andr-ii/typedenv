@@ -5,6 +5,6 @@
  * @license MIT
  */
 
-// Will be tracking generated `env.d.ts` file from package root directory.
+// Will be tracking generated `env.d.ts` file which will be generated.
 // @ts-ignore
-export type { EnvTypes } from '../../../env';
+export type { EnvTypes } from './env';

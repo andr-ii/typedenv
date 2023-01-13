@@ -2,9 +2,8 @@
 /node_modules
 /bin
 /lib
-/env.d.ts
+/src/env.d.ts
 /.env
-/test.ts
 
 # Logs
 *.log

@@ -2,6 +2,7 @@
 
 [![NPM version][npm-img]][npm-url]
 [![Package Build][build-img]][build-url]
+[![Coverage Status][coverage-img]][coverage-url]
 
 An utility for creation types for `process.env` variables and `.env` file.
 
@@ -14,6 +15,12 @@ npm i typedenv
 ## Initial types generation
 
 At the very first time you will have to create a `env.d.ts` file.
+It will be located at `your-project/node_modules/typedenv/lib` directory
+and will include all types for `process.env` and `.env` file.
+
+> **Note**
+> If `.env` file was updated - this script should be re-run manually
+> to get all new variables with types for your development process.
 
 Add following script to the `scripts` of your project's `package.json` file:
 
@@ -21,19 +28,25 @@ Add following script to the `scripts` of your project's `package.json` file:
 "typedenv": "typedenv init"
 ```
 
-Then simply run:
+Then run:
 
 ```bash
 npm run typedenv
 ```
 
-The `env.d.ts` file should appear at your project's root directory.
-
-It will include all types for `process.env` and `.env` file.
-
 ### Usage
 
-Then all `process.env` and `.env` variables will be available with types:
+Add import:
+
+```ts
+// ES6 or TypeScript
+import env from 'typedenv';
+
+// CommonJS
+const { env } = require('typedenv');
+```
+
+All of the `process.env` and the `.env` file variables will be available with types:
 
 <img src="https://github.com/andr-ii/typedenv/blob/master/assets/typedenv.png?raw=true"/>
 
@@ -41,9 +54,9 @@ Then all `process.env` and `.env` variables will be available with types:
 
 ```env
 # This value will have a 'number' type.
-VERSION=2
+PORT=3000
 
-# This value will have a 'string' type.
+# This value will have a 'string' type. Quotes ' or " will be removed.
 PROJECT='foo-bar'
 
 COMMENT=some-comment # This value will have a 'string' type and this comment will be removed.
@@ -56,3 +69,5 @@ IS_JSON=true
 [npm-url]: https://www.npmjs.com/package/typedenv
 [build-img]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml/badge.svg
 [build-url]: https://github.com/andr-ii/typedenv/actions/workflows/build.yml
+[coverage-img]: https://coveralls.io/repos/github/andr-ii/typedenv/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/andr-ii/typedenv?branch=master

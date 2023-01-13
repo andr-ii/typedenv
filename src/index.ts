@@ -7,13 +7,16 @@
  */
 
 import * as fs from 'fs';
+import * as path from 'path';
 import { EnvTypes } from './types';
 
 export const env: EnvTypes = makeTypes();
+export default env;
 
 export function init() {
-  if (process.argv[2] !== 'init') {
-    throw new Error('Unsupported argument.');
+  const arg = process.argv[2];
+  if (arg !== 'init') {
+    throw new Error(`Unsupported or missing argument: "${arg}".`);
   }
 
   makeTypes();
@@ -33,7 +36,8 @@ function getTyped(value: string) {
 function makeTypes(): EnvTypes {
   const env: EnvTypes = {};
 
-  const stream = fs.createWriteStream('./env.d.ts');
+  const stream = fs.createWriteStream(path.join(__dirname, 'env.d.ts'));
+
   const newLine = process.platform === 'win32' ? '\r\n' : '\n';
 
   const envFile = fs.existsSync('./.env')
