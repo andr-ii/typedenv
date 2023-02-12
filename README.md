@@ -66,9 +66,9 @@ COMMENT=some-comment # This value will have a 'string' type and this comment wil
 IS_JSON=true
 ```
 
-[npm-img]: https://img.shields.io/npm/v/tyenv.svg
+[npm-img]: https://img.shields.io/npm/v/tyenv.svg?logo=npm
 [npm-url]: https://www.npmjs.com/package/tyenv
 [build-img]: https://github.com/andr-ii/tyenv/actions/workflows/build.yml/badge.svg
 [build-url]: https://github.com/andr-ii/tyenv/actions/workflows/build.yml
-[coverage-img]: https://coveralls.io/repos/github/andr-ii/tyenv/badge.svg?branch=master
+[coverage-img]: https://img.shields.io/coverallsCoverage/github/andr-ii/tyenv?label=coverage&logo=jest
 [coverage-url]: https://coveralls.io/github/andr-ii/tyenv?branch=master
