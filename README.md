@@ -1,8 +1,9 @@
 # tyenv
 
-[![NPM version][npm-img]][npm-url]
-[![Package Build][build-img]][build-url]
-[![Coverage Status][coverage-img]][coverage-url]
+[![NPM][npm-img]][npm-url]
+[![Build][build-img]][build-url]
+[![Coverage][coverage-img]][coverage-url]
+[![License][license-pic]][license-url]
 
 An utility for creation types for `process.env` variables and `.env` file.
 
@@ -72,3 +73,5 @@ IS_JSON=true
 [build-url]: https://github.com/andr-ii/tyenv/actions/workflows/build.yml
 [coverage-img]: https://img.shields.io/coverallsCoverage/github/andr-ii/tyenv?label=coverage&logo=jest
 [coverage-url]: https://coveralls.io/github/andr-ii/tyenv?branch=master
+[license-pic]: https://img.shields.io/github/license/andr-ii/tyenv?color=blue&label=%C2%A9%20license
+[license-url]: https://github.com/andr-ii/tyenv/blob/master/LICENSE
