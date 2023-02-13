@@ -68,7 +68,7 @@ IS_JSON=true
 
 [npm-img]: https://img.shields.io/npm/v/tyenv.svg?logo=npm
 [npm-url]: https://www.npmjs.com/package/tyenv
-[build-img]: https://github.com/andr-ii/tyenv/actions/workflows/build.yml/badge.svg
+[build-img]: https://img.shields.io/github/actions/workflow/status/andr-ii/tyenv/build.yml?logo=github
 [build-url]: https://github.com/andr-ii/tyenv/actions/workflows/build.yml
 [coverage-img]: https://img.shields.io/coverallsCoverage/github/andr-ii/tyenv?label=coverage&logo=jest
 [coverage-url]: https://coveralls.io/github/andr-ii/tyenv?branch=master
